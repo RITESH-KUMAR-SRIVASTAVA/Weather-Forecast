@@ -3,10 +3,12 @@ import os
 import contextlib
 import requests
 
-from plyer import notification
+# Suppress plyer's stderr noise while probing for backends
+with contextlib.redirect_stderr(open(os.devnull, 'w')):
+    from plyer import notification
 
 # 1. Get coordinates from city name
-city = "Delhi"
+city = input("Enter City: ")
 geo_url = "https://geocoding-api.open-meteo.com/v1/search"
 geo_params = {"name": city, "count": 1}
 
