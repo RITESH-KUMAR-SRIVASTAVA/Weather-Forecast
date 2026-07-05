@@ -53,7 +53,7 @@ pip install -r requirements.txt
 4. Run the application
 
 ```bash
-python 1.py
+python Weather-Forecast.py
 ```
 
 ---
@@ -73,7 +73,7 @@ A desktop notification will also pop up with the same information.
 ```text
 Weather-Forecast/
 │
-├── 1.py                  # Main weather script
+├── Weather-Forecast.py   # Main weather script
 ├── requirements.txt      # Python dependencies
 └── README.md             # This file
 ```

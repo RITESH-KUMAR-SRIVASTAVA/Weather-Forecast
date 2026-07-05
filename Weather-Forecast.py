@@ -1,4 +1,8 @@
+import sys
+import os
+import contextlib
 import requests
+
 from plyer import notification
 
 # 1. Get coordinates from city name
@@ -38,11 +42,12 @@ if "results" in geo_res:
 
         # 3. Cross-platform notification (gracefully handle missing backend)
         try:
-            notification.notify(
-                title="Weather Update",
-                message=weather_info,
-                timeout=5
-            )
+            with contextlib.redirect_stderr(open(os.devnull, 'w')):
+                notification.notify(
+                    title="Weather Update",
+                    message=weather_info,
+                    timeout=5
+                )
         except Exception:
             print("(Desktop notification unavailable — install pyobjus on macOS or notify2 on Linux)")
     else:
