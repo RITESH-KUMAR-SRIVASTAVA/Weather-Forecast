@@ -1,4 +1,4 @@
-# 🌤️ Weather Forecast Desktop Notifier
+# 🌤️ Weather Forecast Desktop Notifier 
 
 A lightweight **Python** script that fetches live weather data for cities using the **Open-Meteo API** and sends a **cross-platform desktop notification** with the current temperature and wind speed.
 
